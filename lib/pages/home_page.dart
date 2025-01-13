@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/pages/home.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -14,11 +15,25 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _selectedIndex = index;
     });
+
+    final List<Widget> _children = [
+      Home(),
+      Search(),
+      Reels(),
+      Post(),
+      Profile()
+    ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: Center(
+        child: Text(
+          'Selected Index: $_selectedIndex',
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
