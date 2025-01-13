@@ -18,10 +18,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final List<Widget> _children = [
       Home(),
-      Search(),
-      Reels(),
-      Post(),
-      Profile()
+      // Search(),
+      // Reels(),
+      // Post(),
+      // Profile()
     ];
   }
 
