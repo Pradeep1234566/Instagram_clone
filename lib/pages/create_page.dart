@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/pages/explore_grid.dart';
+
 import 'package:instagram/pages/page_grdi.dart';
 
 class CreatePage extends StatelessWidget {
