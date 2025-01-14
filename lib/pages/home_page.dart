@@ -11,29 +11,34 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
+  final List<Widget> _children = [
+    Center(
+      child: Text("Home"),
+    ),
+    Center(
+      child: Text("Search"),
+    ),
+    Center(
+      child: Text("Create"),
+    ),
+    Center(
+      child: Text("Reels"),
+    ),
+    Center(
+      child: Text("Profile"),
+    ),
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
-
-    final List<Widget> _children = [
-      Home(),
-      // Search(),
-      // Reels(),
-      // Post(),
-      // Profile()
-    ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(
-          'Selected Index: $_selectedIndex',
-          style: TextStyle(fontSize: 18),
-        ),
-      ),
+      body: _children[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
@@ -58,14 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
               Icons.add_box_outlined,
               color: Colors.black,
             ),
-            label: 'Add',
+            label: 'Create',
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.favorite,
+              Icons.video_library,
               color: Colors.black,
             ),
-            label: 'Favorites',
+            label: 'Reels',
           ),
           BottomNavigationBarItem(
             icon: Icon(
