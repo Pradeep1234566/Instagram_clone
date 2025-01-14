@@ -2,8 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:instagram/pages/bubble_stories.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
-
+  Home({super.key});
+  final List<String> Name = [
+    'User 1',
+    'User 2',
+    'User 3',
+    'User 4',
+    'User 5',
+    'User 6',
+    'User 7',
+    'User 8',
+    'User 9',
+    'User 10',
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,15 +51,16 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Row(
-              children: [
-                BubbleStories(),
-                BubbleStories(),
-                BubbleStories(),
-                BubbleStories(),
-                BubbleStories(),
-              ],
-            )
+            Container(
+                height: 130,
+                child: ListView.builder(
+                    itemCount: Name.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return BubbleStories(
+                        text: Name[index],
+                      );
+                    })),
           ],
         ),
       ),
