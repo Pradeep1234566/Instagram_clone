@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     Home(),
     SearchPage(),
-    // Placeholder for CreatePage
+    CreatePage(),
     ReelsPage(),
     ProfilePage(),
   ];
@@ -28,7 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // Navigate to CreatePage and hide BottomNavigationBar
       Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => const CreatePage(),
+          builder: (context) => CreatePage(),
         ),
       );
     } else {

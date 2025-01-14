@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/pages/explore_grid.dart';
+import 'package:instagram/pages/page_grdi.dart';
 
 class CreatePage extends StatelessWidget {
   const CreatePage({super.key});
@@ -129,7 +131,37 @@ class CreatePage extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                 ),
-                
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        PageGrid(path: 'assests/images/P1.jpg'),
+                        PageGrid(path: 'assests/images/P2.jpg'),
+                        PageGrid(path: 'assests/images/P3.jpg'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        PageGrid(path: 'assests/images/P4.jpg'),
+                        PageGrid(path: 'assests/images/P5.jpg'),
+                        PageGrid(path: 'assests/images/P6.jpg'),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        PageGrid(path: 'assests/images/P7.jpg'),
+                        PageGrid(path: 'assests/images/P8.jpg'),
+                        PageGrid(path: 'assests/images/P9.jpg'),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Image.asset(
+                  'assests/images/new_image.jpg',
+                  width: 100,
+                  height: 100,
+                ),
               ],
             ),
           ),
