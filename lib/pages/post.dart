@@ -115,12 +115,16 @@ class MyPost extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: 'User ',
+                  text: name,
                   style: TextStyle(
                     fontFamily: 'Arial',
                     fontWeight: FontWeight.bold,
+                    fontSize: 15,
                     color: Colors.black,
                   ),
+                ),
+                WidgetSpan(
+                  child: SizedBox(width: 5),
                 ),
                 TextSpan(
                   text: caption,

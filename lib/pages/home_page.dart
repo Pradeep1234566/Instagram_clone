@@ -18,15 +18,24 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     Home(),
     SearchPage(),
-    CreatePage(),
+    // Placeholder for CreatePage
     ReelsPage(),
-    ProfilePage()
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    if (index == 2) {
+      // Navigate to CreatePage and hide BottomNavigationBar
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const CreatePage(),
+        ),
+      );
+    } else {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
   }
 
   @override
