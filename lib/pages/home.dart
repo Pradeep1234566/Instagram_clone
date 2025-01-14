@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram/pages/bubble_stories.dart';
+import 'package:instagram/pages/post.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
@@ -49,10 +50,10 @@ class Home extends StatelessWidget {
               color: Colors.grey[400],
             ),
             SizedBox(
-              height: 10,
+              height: 1,
             ),
             Container(
-                height: 130,
+                height: 110,
                 child: ListView.builder(
                     itemCount: Name.length,
                     scrollDirection: Axis.horizontal,
@@ -61,6 +62,17 @@ class Home extends StatelessWidget {
                         text: Name[index],
                       );
                     })),
+            SizedBox(height: 2),
+            Expanded(
+              child: ListView.builder(
+                itemCount: Name.length, // Replace with the actual number of posts
+                itemBuilder: (context, index) {
+                  return MyPost(
+                      // Pass necessary data to MyPost widget
+                      );
+                },
+              ),
+            ),
           ],
         ),
       ),

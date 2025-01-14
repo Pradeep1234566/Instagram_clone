@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class BubbleStories extends StatelessWidget {
   final String text;
 
- 
   const BubbleStories({super.key, required this.text});
 
   @override
