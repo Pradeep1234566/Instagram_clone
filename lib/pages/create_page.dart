@@ -156,12 +156,6 @@ class CreatePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
-                Image.asset(
-                  'assests/images/new_image.jpg',
-                  width: 100,
-                  height: 100,
-                ),
               ],
             ),
           ),
