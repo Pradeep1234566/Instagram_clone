@@ -5,17 +5,18 @@ import 'package:instagram/pages/post.dart';
 class Home extends StatelessWidget {
   Home({super.key});
   final List<String> Name = [
-    'User 1',
-    'User 2',
-    'User 3',
-    'User 4',
-    'User 5',
-    'User 6',
-    'User 7',
-    'User 8',
-    'User 9',
-    'User 10',
+    'Tanjiro Kamado',
+    'Nagato',
+    'Satoru Gojo',
+    'Haruka Takashi',
+    'Kaito Shimizu',
+    'Aiko Nakamura',
+    'Renji Arata',
+    'Hikaru Yoshida',
+    'Akari Fujimoto',
+    'Riku Yamazaki',
   ];
+
   final List<String> Story = [
     'assests/images/P1.jpg',
     'assests/images/P2.jpg',
@@ -45,58 +46,70 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Instagram",
-            style: TextStyle(
-              fontFamily: 'Cursive',
-              fontWeight: FontWeight.w900,
-              fontStyle: FontStyle.normal,
-              fontSize: 24,
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              title: Text(
+                "Instagram",
+                style: TextStyle(
+                  fontFamily: 'Cursive',
+                  fontWeight: FontWeight.w900,
+                  fontStyle: FontStyle.normal,
+                  fontSize: 24,
+                ),
+              ),
+              actions: [
+                Icon(Icons.add_box_outlined),
+                SizedBox(width: 20),
+                Icon(Icons.favorite_border),
+                SizedBox(width: 20),
+                Image.asset(
+                  'assests/images/DM.png',
+                  height: 25,
+                  width: 25,
+                )
+              ],
+              floating: true,
+              snap: true,
             ),
-          ),
-          actions: [
-            Icon(Icons.add_box_outlined),
-            SizedBox(width: 20),
-            Icon(Icons.favorite_border),
-            SizedBox(width: 20),
-            Image.asset(
-              'assests/images/DM.png',
-              height: 25,
-              width: 25,
-            )
-          ],
-        ),
-        body: Column(
-          children: [
-            SizedBox(height: 5),
-            Divider(
-              thickness: 1,
-              color: Colors.grey[400],
+            SliverToBoxAdapter(
+              child: Column(
+                children: [
+                  SizedBox(height: 5),
+                  Divider(
+                    thickness: 1,
+                    color: Colors.grey[400],
+                  ),
+                  SizedBox(
+                    height: 1,
+                  ),
+                  Container(
+                    height: 120,
+                    child: ListView.builder(
+                      itemCount: Name.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return BubbleStories(
+                          text: Name[index],
+                          path: Story[index],
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 2),
+                ],
+              ),
             ),
-            SizedBox(
-              height: 1,
-            ),
-            Container(
-                height: 110,
-                child: ListView.builder(
-                    itemCount: Name.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return BubbleStories(
-                          text: Name[index], path: Story[index]);
-                    })),
-            SizedBox(height: 2),
-            Expanded(
-              child: ListView.builder(
-                itemCount:
-                    Name.length, // Replace with the actual number of posts
-                itemBuilder: (context, index) {
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) {
                   return MyPost(
+                    name: Name[index],
                     caption: Quotes[index],
-                    path: 'assests/images/P1.jpg',
+                    path: Story[index],
                   );
                 },
+                childCount: Name.length,
               ),
             ),
           ],

@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class MyPost extends StatelessWidget {
   final String caption;
   final String path;
-  const MyPost({super.key, required this.caption, required this.path});
+  final String name;
+  const MyPost({super.key, required this.caption, required this.path, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class MyPost extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text("Name"),
+                Text(name),
               ],
             ),
             Icon(Icons.more_vert),
@@ -39,6 +40,10 @@ class MyPost extends StatelessWidget {
           height: 400,
           decoration: BoxDecoration(
             color: Colors.grey[300],
+            image: DecorationImage(
+              image: AssetImage(path),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         SizedBox(height: 10),
@@ -68,7 +73,28 @@ class MyPost extends StatelessWidget {
         Container(
           alignment: Alignment.centerLeft,
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Text(caption),
+          child: RichText(
+            text: TextSpan(
+              children: [
+                TextSpan(
+                  text: 'User ',
+                  style: TextStyle(
+                    fontFamily: 'Arial',
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                TextSpan(
+                  text: caption,
+                  style: TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.normal,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
         SizedBox(height: 20),
       ],
