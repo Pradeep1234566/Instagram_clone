@@ -94,13 +94,17 @@ class MyPost extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 8.0, top: 3),
+              padding: const EdgeInsets.only(right: 4.0, top: 3),
               child: Text(
                 'Gojo Saturo',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
-            Text('and others')
+            Text('and '),
+            Text("others",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ))
           ],
         ),
         SizedBox(height: 5),
