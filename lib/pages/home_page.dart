@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/pages/create_page.dart';
 import 'package:instagram/pages/home.dart';
+import 'package:instagram/pages/profile_page.dart';
+import 'package:instagram/pages/reels_page.dart';
+import 'package:instagram/pages/serach_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -12,21 +16,11 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _children = [
-    Center(
-      child: Text("Home"),
-    ),
-    Center(
-      child: Text("Search"),
-    ),
-    Center(
-      child: Text("Create"),
-    ),
-    Center(
-      child: Text("Reels"),
-    ),
-    Center(
-      child: Text("Profile"),
-    ),
+    Home(),
+    SearchPage(),
+    CreatePage(),
+    ReelsPage(),
+    ProfilePage()
   ];
 
   void _onItemTapped(int index) {

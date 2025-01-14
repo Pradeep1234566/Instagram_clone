@@ -1,95 +1,56 @@
-
 import 'package:flutter/material.dart';
+import 'package:instagram/pages/bubble_stories.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Instagram'),
-        backgroundColor: Colors.black,
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10, // Example item count
-              itemBuilder: (context, index) {
-                return PostItem();
-              },
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "Instagram",
+            style: TextStyle(
+              fontFamily: 'Cursive',
+              fontWeight: FontWeight.w900,
+              fontStyle: FontStyle.normal,
+              fontSize: 24,
             ),
           ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_box),
-            label: 'Add',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            label: 'Likes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-      ),
-    );
-  }
-}
-
-class PostItem extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.all(10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ListTile(
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage('https://via.placeholder.com/150'),
+          actions: [
+            Icon(Icons.add_box_outlined),
+            SizedBox(width: 20),
+            Icon(Icons.favorite_border),
+            SizedBox(width: 20),
+            Image.asset(
+              'assests/images/DM.png',
+              height: 25,
+              width: 25,
+            )
+          ],
+        ),
+        body: Column(
+          children: [
+            SizedBox(height: 5),
+            Divider(
+              thickness: 1,
+              color: Colors.grey[400],
             ),
-            title: Text('Username'),
-            trailing: Icon(Icons.more_vert),
-          ),
-          Image.network('https://via.placeholder.com/400x300'),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
+            SizedBox(
+              height: 10,
+            ),
+            Row(
               children: [
-                Icon(Icons.favorite_border),
-                SizedBox(width: 10),
-                Icon(Icons.comment),
-                SizedBox(width: 10),
-                Icon(Icons.send),
+                BubbleStories(),
+                BubbleStories(),
+                BubbleStories(),
+                BubbleStories(),
+                BubbleStories(),
               ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text('Liked by user1 and others'),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('View all comments'),
-          ),
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
