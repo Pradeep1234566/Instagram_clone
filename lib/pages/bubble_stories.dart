@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class BubbleStories extends StatelessWidget {
   final String text;
-
-  const BubbleStories({super.key, required this.text});
+  final String path;
+  const BubbleStories({super.key, required this.text, required this.path});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,10 @@ class BubbleStories extends StatelessWidget {
             height: 60,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.grey[400],
+              image: DecorationImage(
+                image: AssetImage(path),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           SizedBox(height: 5),

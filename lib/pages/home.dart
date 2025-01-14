@@ -16,6 +16,31 @@ class Home extends StatelessWidget {
     'User 9',
     'User 10',
   ];
+  final List<String> Story = [
+    'assests/images/P1.jpg',
+    'assests/images/P2.jpg',
+    'assests/images/P3.jpg',
+    'assests/images/P4.jpg',
+    'assests/images/P5.jpg',
+    'assests/images/P6.jpg',
+    'assests/images/P7.jpg',
+    'assests/images/P8.jpg',
+    'assests/images/P9.jpg',
+    'assests/images/P10.jpg'
+  ];
+  final List<String> Quotes = [
+    "The greatest battles are fought within the silent chambers of the soul.",
+    "The paradox of life is that it is both fleeting and infinite, a moment and an eternity.",
+    "We are not given a good or bad life. We are given a life, and it’s up to us to make it good or bad.",
+    "Sometimes, we must let go of the life we have planned to embrace the one waiting for us.",
+    "It is not the years in your life that count, but the life in your years.",
+    "A ship is safe in harbor, but that’s not what ships are for.",
+    "Your perception of me is a reflection of you; my reaction to you is an awareness of me.",
+    "Freedom lies in being bold enough to let go of what you cannot control.",
+    "You don’t have a soul. You are a soul. You have a body.",
+    "Do not follow where the path may lead. Go instead where there is no path and leave a trail."
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -59,17 +84,18 @@ class Home extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
                       return BubbleStories(
-                        text: Name[index],
-                      );
+                          text: Name[index], path: Story[index]);
                     })),
             SizedBox(height: 2),
             Expanded(
               child: ListView.builder(
-                itemCount: Name.length, // Replace with the actual number of posts
+                itemCount:
+                    Name.length, // Replace with the actual number of posts
                 itemBuilder: (context, index) {
                   return MyPost(
-                      // Pass necessary data to MyPost widget
-                      );
+                    caption: Quotes[index],
+                    path: 'assests/images/P1.jpg',
+                  );
                 },
               ),
             ),
