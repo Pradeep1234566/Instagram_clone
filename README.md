@@ -1,16 +1,29 @@
-# instagram
-
-A new Flutter project.
+# Instagram Clone App
+A Flutter application designed to replicate the Front end part of the Instagram. This project serves as a starting point for building social media apps with Flutter.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with the Instagram Clone App, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+- Ensure you have Flutter installed on your system.
+- A code editor like Visual Studio Code or Android Studio for Flutter development.
+- An Android or iOS emulator or a real device for testing.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Install my-project with npm
+
+```bash
+git clone https://github.com/Pradeep1234566/Login_1.git
+cd login
+flutter pub get
+
+```
+    
+## Deployment
+
+To deploy this project run
+
+```bash
+  flutter run
+```
